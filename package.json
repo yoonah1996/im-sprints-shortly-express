@@ -10,7 +10,6 @@
     "client": "cd client && npm start",
     "server": "cd server && npm start",
     "start": "concurrently --kill-others \"npm run server\" \"npm run client\"",
-    "test": "node shortly.js & mocha --bail --reporter nyan test/ServerSpec.js; pkill -n node;",
     "lint": "./node_modules/.bin/eslint ./"
   },
   "lint-staged": {
