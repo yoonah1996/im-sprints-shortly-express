@@ -1,0 +1,9 @@
+.link-item {
+    padding: 1rem;
+    user-select: none;
+}
+
+.link-item + .link-item {
+    border-top: 1px solid #444444;
+}
+
