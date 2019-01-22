@@ -1,13 +1,10 @@
 # Shortly Express
 ## Objectives
 이번 Sprint를 진행하며 수강생분이 이해하신 학습목표를 선택해주세요.([ ]안에 알파벳 소문자 x를 입력해주세요)
-- [ ] Node.js development callback patterns, 특히 asynchronous functions 활용에 친숙해진다.
-- [ ] 어떤 경우에 중첩된 callback이 발생하는지 이해한다.
-- [ ] 중첩된 callback의 단점을 이해한다.
-- [ ] Asynchronous code를 읽고 쓰기 편하도록 Promises를 사용해본다.
-- [ ] method chaining의 개념을 이해한다.
-- [ ] `async`/`await` keyword에 대해 이해하고, 작동 원리 및 장점 및 단점을 이해한다.
-- [ ] `async`/`await` 사용 시 `try`/`catch`를 통한 에러 처리를 이해한다.
+- [ ] Node.js, React, Redux, Sequelize, express의 연계를 알아본다 특히 Node.js, express 활용에 친숙해진다.
+- [ ] Promise 개념을 활용하여 API를 구현한다
+- [ ] 제시하는 기능에 따른 올바른 로직을 구현한다
+- [ ] 서비스의 보안과 관련된 방법을 알아보고 원리 및 장점 및 단점을 이해한다.
 ## Improvements
 이번 Sprint에서 더 개선이 필요하다고 느끼는 항목을 선택해주세요.([ ]안에 알파벳 소문자 x를 입력해주세요)
 - [ ] Sessions
