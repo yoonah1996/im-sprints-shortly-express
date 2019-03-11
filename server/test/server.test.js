@@ -130,7 +130,7 @@ describe('POST /user/signin', () => {
     agent
       .post('/user/signin')
       .send({
-        'email': 'asdf@gmail.com',
+        'email': 'test@gmail.com',
         'password': 'asdfasdf'
       })
       .end((err, res) => {
