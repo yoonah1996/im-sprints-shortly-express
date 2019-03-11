@@ -17,13 +17,6 @@ Sprint를 원활히 진행하기 위해 꼭 알고있어야하는 것들입니�
 - [ ] Client에서 API를 호출하는 방법을 알고 있다.
 - [ ] node 환경설정과 관련된 모듈 인스톨, 모듈 추가, 디버깅을 위한 프로젝트 실행 방법을 알고 있다.
 
-## Pair programming을 시작하기 전 혼자서 해볼 것들
-
-본격적으로 Pair programming을 시작하기 전 아래 항목들을 먼저 확인해봅니다.
-
-- [ ] [request](https://github.com/request/request) 라이브러리 사용 방법 확인
-- [ ] `fs.readFile` 메소드 사용 방법 확인
-
 ## Shortly에서 해볼 것들
 
 - [ ] Nodejs 환경에서 express를 적용해보기
@@ -40,16 +33,3 @@ Sprint를 원활히 진행하기 위해 꼭 알고있어야하는 것들입니�
 - [ ] 클라이언트 내에 관리되는 모든 state를 Redux에서 관리하기
 - [ ] 1분 간격으로 URL 리스트의 정보가 자동적으로 갱신되도록 개선하기
 - [ ] 사이트를 css, scss, styled-component 등을 활용하여 디자인 개선하기
-
-## Sprint 진행 방법
-
-1. 현재 repo를 자신의 Github으로 fork 합니다.
-2. fork된 repo를 git clone 명령어로 자신의 local 환경으로 다운로드합니다.
-3. [student.json](student.json) 파일에 필요한 정보를 입력합니다.
-4. 재밌게 coding을 시작합니다.
-
-## 제출 방법
-
-1. [REVIEW.md](REVIEW.md) 파일에 이번 Sprint를 마무리하며 review를 작성합니다.
-2. 자신의 remote repo로 push 합니다.
-3. Upstream repo에서 pull request를 만듭니다.
