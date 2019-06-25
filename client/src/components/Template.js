@@ -12,10 +12,6 @@ class Template extends Component {
     const { LoginActions } = this.props;
     LoginActions.logout().then(() => {
       localStorage.setItem('isLogin', false);
-      /**
-       * 서버 세션 로그아웃 코드
-       * Redux를 사용하여, 사용하지 않고 이 곳에 작성하셔도 됩니다.
-       */
     });
   }
 
