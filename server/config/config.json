@@ -3,6 +3,20 @@
     "dialect": "sqlite",
     "storage": "./database.shortly"
   },
+  "mysql_dev": {
+    "username": "root",
+    "password": "yourpassword",
+    "database": "yourdatabasename",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "mysql_rds_dev": {
+    "username": "yourusername",
+    "password": "yourpassword",
+    "database": "yourdatabasename",
+    "host": "yourrdsinstanceurl",
+    "dialect": "mysql"
+  },
   "test": {
     "username": "root",
     "password": null,
