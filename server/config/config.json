@@ -1,7 +1,8 @@
 {
   "development": {
     "dialect": "sqlite",
-    "storage": "./database.shortly"
+    "storage": "./database.shortly",
+    "logging": false
   },
   "mysql_dev": {
     "username": "root",

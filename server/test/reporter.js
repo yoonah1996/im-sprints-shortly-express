@@ -17,10 +17,10 @@ function MyReporter(runner) {
   });
 
   runner.on("end", function() {
-    const result = {
+    const results = {
       passed,
       failed
     };
-    fs.writeFileSync("result.json", JSON.stringify(result));
+    fs.writeFileSync("results.json", JSON.stringify(results));
   });
 }

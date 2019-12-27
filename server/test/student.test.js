@@ -1,7 +1,5 @@
 const { expect } = require('chai');
 const studentData = require('../../student.json');
-
-console.log(studentData)
   
 describe('student.json', function () {
     it('should put correct class on students.json', function() {
