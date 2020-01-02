@@ -7,8 +7,9 @@ import store from './store';
 
 ReactDOM.render(
   <Provider store={store}>
-    <Root/>
-  </Provider>
-, document.getElementById('root'));
+    <Root />
+  </Provider>,
+  document.getElementById('root')
+);
 
 serviceWorker.unregister();

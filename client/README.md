@@ -1,44 +1,25 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Shortly Express Client
 
-## Available Scripts
+## 이번 Sprint의 학습 목표
 
-In the project directory, you can run:
+- Node.js, React, Sequelize, express, redux의 연계를 알아본다 특히 Node.js, express 활용에 친숙해진다.
+- 존재하는 서버를 이용하여, Client 개발과 디버깅을 할 수 있다.
 
-### `npm start`
+## Sprint를 시작하기 전 알고있어야 하는 것들
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Sprint를 원활히 진행하기 위해 꼭 알고있어야하는 것들입니다.
+아래 항목들 중 모르는 것이 있다면 Sprint를 시작하기 전 꼭 help-desk에 문의부탁드립니다.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+- [ ] React의 구조를 알고 있으며 Component를 생성할 수 있다.
+- [ ] Client에서 API를 호출하는 방법을 알고 있다.
 
-### `npm test`
+## Shortly Client에서 해볼 것들
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [ ] 회원가입 UI를 구현해본다.
+- [ ] Server의 리소스를 활용하여, Client를 개발한다.
 
-### `npm run build`
+## Advanced 한 과제들
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [ ] 1분 간격으로 URL 리스트의 정보가 자동적으로 갱신되도록 개선하기
+- [ ] Server 응답에 따른 사용자 지정 오류에 대응하여 view를 띄운다.
+- [ ] 사이트를 css, scss, styled-component 등을 활용하여 디자인 개선한다.

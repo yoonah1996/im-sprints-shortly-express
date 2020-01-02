@@ -1,12 +1,12 @@
 .input {
-    padding-top: 1rem;
+  padding-top: 1rem;
 }
 
 .input input {
-    flex:1;
-    font-size: 1.25rem;
-    outline: none;
-    border: none;
-    border-bottom: 1px solid #cccccc;
-    width: 10rem;
+  flex: 1;
+  font-size: 1.25rem;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #cccccc;
+  width: 10rem;
 }

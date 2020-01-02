@@ -7,13 +7,12 @@ import * as loginActions from '../modules/login';
 import Axios from 'axios';
 
 class Template extends Component {
-
   handleLogout = () => {
     const { LoginActions } = this.props;
     LoginActions.logout().then(() => {
       localStorage.setItem('isLogin', false);
     });
-  }
+  };
 
   render() {
     const { isLogin } = this.props;
@@ -22,32 +21,39 @@ class Template extends Component {
     return (
       <div className="template">
         <h2 className="title">Shortly</h2>
-          <div>
-            <Link className="menu-item" to={"/list"}>List</Link>
-            <Link className="menu-item" to={"/shorten"}>Shorten</Link>
-            {
-              isLogin ? 
-              <span className="menu-item" onClick={() => {
+        <div>
+          <Link className="menu-item" to={'/list'}>
+            List
+          </Link>
+          <Link className="menu-item" to={'/shorten'}>
+            Shorten
+          </Link>
+          {isLogin ? (
+            <span
+              className="menu-item"
+              onClick={() => {
                 handleLogout();
-              }}>Logout</span>
-              : 
-              <Link className="menu-item" to={"/Login"}>Login</Link>
-            }
-            {
-              isLogin ? <Redirect to={"/Login"} /> : ''
-            }
-          </div>
+              }}
+            >
+              Logout
+            </span>
+          ) : (
+            <Link className="menu-item" to={'/Login'}>
+              Login
+            </Link>
+          )}
+          {isLogin ? <Redirect to={'/Login'} /> : ''}
+        </div>
       </div>
-    )
+    );
   }
 }
 
 export default connect(
-  (state) => ({
+  state => ({
     isLogin: state.login.isLogin
   }),
-  (dispatch) => ({
+  dispatch => ({
     LoginActions: bindActionCreators(loginActions, dispatch)
   })
-)
-(Template);
+)(Template);

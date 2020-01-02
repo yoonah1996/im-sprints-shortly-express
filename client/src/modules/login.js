@@ -1,27 +1,27 @@
-import { handleActions } from "redux-actions";
+import { handleActions } from 'redux-actions';
 
-import axios from "axios";
+import axios from 'axios';
 
-const POST_LOGIN_PENDING = "POST_LOGIN_PENDING";
-const POST_LOGIN_SUCCESS = "POST_LOGIN_SUCCESS";
-const POST_LOGIN_FAILURE = "POST_LOGIN_FAILUER";
+const POST_LOGIN_PENDING = 'POST_LOGIN_PENDING';
+const POST_LOGIN_SUCCESS = 'POST_LOGIN_SUCCESS';
+const POST_LOGIN_FAILURE = 'POST_LOGIN_FAILUER';
 
-const LOGOUT = "LOGOUT";
+const LOGOUT = 'LOGOUT';
 
 axios.defaults.withCredentials = true;
 
 function postLoginAPI(data) {
-  return axios.post("http://localhost:3001/user/signin", data);
+  return axios.post('http://localhost:3001/user/signin', data);
 }
 
 function postLogoutAPI() {
-  return axios.post("http://localhost:3001/user/signout");
+  return axios.post('http://localhost:3001/user/signout');
 }
 
 const initialState = {
   pending: false,
   error: false,
-  isLogin: localStorage.getItem("isLogin") === "true"
+  isLogin: localStorage.getItem('isLogin') === 'true'
 };
 
 export const login = data => dispatch => {

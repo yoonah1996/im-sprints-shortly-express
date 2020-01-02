@@ -2,9 +2,7 @@ import React from 'react';
 import LinkList from '../components/LinkList';
 
 const List = () => {
-  return (
-    <LinkList />
-  )
-}
+  return <LinkList />;
+};
 
 export default List;

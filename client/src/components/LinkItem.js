@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './LinkItem.css';
 
-class LinkItem extends Component { 
+class LinkItem extends Component {
   render() {
     const { title, url, baseUrl, code, visits } = this.props;
 
@@ -9,10 +9,13 @@ class LinkItem extends Component {
       <div className="link-item">
         <div className="">{title}</div>
         <div>{url}</div>
-        <a href={`http://${baseUrl}/${code}`} target="_blank">{`http://${baseUrl}/${code}`}</a>
+        <a
+          href={`http://${baseUrl}/${code}`}
+          target="_blank"
+        >{`http://${baseUrl}/${code}`}</a>
         <div>{`${visits} Visits`}</div>
       </div>
-    )
+    );
   }
 }
 

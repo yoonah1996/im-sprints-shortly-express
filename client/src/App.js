@@ -8,11 +8,11 @@ class App extends Component {
     return (
       <div>
         <Template />
-        <Route exact path="/" component={Home}/>
+        <Route exact path="/" component={Home} />
         <Switch>
-          <Route path="/list" component={List}/>
-          <Route path="/shorten" component={Shorten}/>
-          <Route path="/login" component={Login}/>
+          <Route path="/list" component={List} />
+          <Route path="/shorten" component={Shorten} />
+          <Route path="/login" component={Login} />
         </Switch>
       </div>
     );

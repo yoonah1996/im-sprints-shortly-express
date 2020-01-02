@@ -7,27 +7,25 @@ import Input from '../components/Input';
 import LinkItem from '../components/LinkItem';
 
 class Shorten extends Component {
-
   state = {
     input: ''
-  }
+  };
 
-  handleChange = (e) => {
-
+  handleChange = e => {
     this.setState({
       input: e.target.value
-    })
-  }
+    });
+  };
 
   handleCreate = () => {
-    const {input} = this.state;
+    const { input } = this.state;
 
     const { ShortenActions } = this.props;
 
-    ShortenActions.shorten({url: input});
+    ShortenActions.shorten({ url: input });
 
-    this.setState({input: ''});
-  }
+    this.setState({ input: '' });
+  };
 
   render() {
     const { data } = this.props;
@@ -36,29 +34,19 @@ class Shorten extends Component {
 
     return (
       <div>
-        <Input
-          value={input}
-          onChange={handleChange}
-          onCreate={handleCreate}/>
-  
-        {
-          data ? 
-          <LinkItem
-            {...data}
-          />
-          :
-          null
-        }
+        <Input value={input} onChange={handleChange} onCreate={handleCreate} />
+
+        {data ? <LinkItem {...data} /> : null}
       </div>
-    )
+    );
   }
 }
 
 export default connect(
-  (state) => ({
+  state => ({
     data: state.shorten.data
   }),
-  (dispatch) => ({
+  dispatch => ({
     ShortenActions: bindActionCreators(shortenActions, dispatch)
   })
 )(Shorten);
