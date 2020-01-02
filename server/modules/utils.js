@@ -19,9 +19,3 @@ exports.getUrlTitle = (url, cb) => {
 exports.isValidUrl = url => {
   return url.match(rValidUrl);
 };
-
-/************************************************************/
-// Add additional utility functions below
-/************************************************************/
-
-

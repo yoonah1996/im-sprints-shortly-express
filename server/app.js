@@ -1,120 +1,74 @@
 const express = require('express');
-const http = require('http');
 const bodyParser = require('body-parser');
+
 const cors = require('cors');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 
-const urls = require('./models').urls;
-const clicks = require('./models').clicks;
-const users = require('./models').users;
+const userRouter = require('./routes/user');
+const linksRouter = require('./routes/links');
 
-const utils = require('./modules/utils');
+const { urls } = require('./models');
+
+const morgan = require('morgan');
 
 const app = express();
 const port = 3001;
 
-app.use(session({
-  secret: '@codestates'
-}));
+app.use(
+  session({
+    secret: '@codestates',
+    resave: false,
+    saveUninitialized: true
+  })
+);
+
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cors());
+app.use(
+  cors({
+    origin: ['http://localhost:3000'],
+    methods: ['GET', 'POST'],
+    credentials: true
+  })
+);
 
-app.get('/', (req, res) => {            // function (req, res) { }
-  res.status(200).send('Success')       // OK
-})
+// ? POSTMAN을 통한 test에 필요할지도 모릅니다. logging을 활용하세요.
+//app.use(morgan('dev'));
 
-/**
- * url : /user/signup
- * description : 유저 회원가입
- */
+// TODO : GET / 요청에 대한 응답을 작성해주세요. (api 구현을 가볍게 시작해보세요.)
+// app. ...
 
- /**
- * url : /user/signin
- * description : 유저 로그인
- */
-
- /**
- * url : /user/signout
- * description : 유저 로그 아웃
- */
-
-  /**
- * url : /user/info
- * description : 유저 정보
- */
-  
-app.get('/links', (req, res) => {
-  urls
-    .findAll()
-    .then(result => {
-      if(result) {
-        res.status(200).json(result)    // OK
-      } else {
-        res.sendStatus(204);            // No Content
-      }
-    })
-    .catch(error => {
-      console.log(error)
-      res.status(500).send(error)       // Server error
-    })
-})
-
-app.post('/links', (req, res) => {
-  const { url } = req.body;             // const url = req.body.url
-
-  if(!utils.isValidUrl(url)) {
-    return res.sendStatus(400)          // Bad Request
-  }
-
-  utils.getUrlTitle(url, (err, title) => {
-    if(err) {
-      console.log(err)
-      return res.sendStatus(400)
-    }
-
-    urls
-      .create({
-        url: url,
-        baseUrl: req.headers.host,
-        title: title
-      })
-      .then(result => {
-        res.status(201).json(result)      // Created
-      })
-      .catch(error => {
-        console.log(error)
-        res.sendStatus(500)               // Server error
-      })
-  });
-})
-
-app.get('/*', (req, res) => {
+app.get('/D*', (req, res) => {
   urls
     .findOne({
       where: {
-          code: req.params[0]
+        code: 'D' + req.params[0]
       }
     })
     .then(result => {
-      if(result) {
-        result.updateAttributes({
+      if (result) {
+        result.update({
           visits: result.visits + 1
-        })
-        res.redirect(result.url)
+        });
+        res.redirect(result.url);
       } else {
-        res.sendStatus(204)                 
+        res.sendStatus(204);
       }
     })
     .catch(error => {
-      console.log(error)
-      res.sendStatus(500)                   
-    })
-})
+      console.log(error);
+      res.sendStatus(500);
+    });
+});
 
-app.set('port', port)
-app.listen(app.get('port'));
+app.use('/user', userRouter);
+app.use('/links', linksRouter);
+
+app.set('port', port);
+app.listen(app.get('port'), () => {
+  //console.log(`app is listening in PORT ${app.get('port')}`);
+});
 
 module.exports = app;

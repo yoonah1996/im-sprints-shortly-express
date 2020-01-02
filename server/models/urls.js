@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
         afterValidate: (data, options) => {
           var shasum = crypto.createHash('sha1');
           shasum.update(data.url);
-          data.code = shasum.digest('hex').slice(0, 5);
+          data.code = 'D' + shasum.digest('hex').slice(0, 5);
         }
       }
     }
