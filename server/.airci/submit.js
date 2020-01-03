@@ -3,7 +3,7 @@ const colors = require('colors');
 
 // Get sutdent data and test results from student.json & result.json
 let studentInfo = require('../student.json');
-let testResult = require('../server/results.json');
+let testResult = require('../results.json');
 let { theClass, student, sprint } = studentInfo;
 let { passed, failed } = testResult;
 

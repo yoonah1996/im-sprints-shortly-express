@@ -7,7 +7,7 @@
     "test": "mocha __test__/index.js --exit --timeout 20000 --exit",
     "start": "nodemon app.js",
     "submit-test": "mocha __test__/index.js --reporter __test__/reporter.js --exit",
-    "check": "node ../.airci/submit.js",
+    "check": "node ./.airci/submit.js",
     "submit": "npm-run-all -c -s --silent submit-test check"
   },
   "author": "",
