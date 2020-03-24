@@ -6,4 +6,4 @@ services:
 before_script:
   - cd server
   - npm ci
-  - echo "create database `shortly`" | mysql -u root --password=""
+  - mysql -u root --password="" -e "create database shortly"
