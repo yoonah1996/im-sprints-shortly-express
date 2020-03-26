@@ -40,6 +40,10 @@ app.use(
 // TODO : GET / 요청에 대한 응답을 작성해주세요. (api 구현을 가볍게 시작해보세요.)
 // app. ...
 
+app.get('/', (req, res) => {
+  res.status(200).send('Success');
+});
+
 app.get('/D*', (req, res) => {
   urls
     .findOne({
