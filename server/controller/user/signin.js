@@ -18,9 +18,6 @@ module.exports = {
     // let cookie = req.session.cookie;
     // console.log('this is typeof cookie : ', typeof cookie)
 
-    // cookie['session_id'] = '33'
-    // console.log('this is cookie with sessionid : ', cookie)
-
     // res.send(JSON.stringify(cookie));
   }
 };
