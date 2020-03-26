@@ -15,11 +15,12 @@ const morgan = require('morgan');
 const app = express();
 const port = 3001;
 
+// session 미들웨어가 req 객체에 session 값을 넣어줌.
 app.use(
   session({
-    secret: '@codestates',
-    resave: false,
-    saveUninitialized: true
+    secret: '@codestates', // 숨기고 싶은 정보
+    resave: false,          
+    saveUninitialized: true // 세션이 필요하기 전까지는 세션을 구동시키지 않는 옵션.
   })
 );
 
