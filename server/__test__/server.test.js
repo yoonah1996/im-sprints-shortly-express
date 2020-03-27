@@ -1,3 +1,8 @@
+/* testcase 추가
+ - signup : 비밀번호 (ex : 비밀번호가 너무 짧습니다)
+ - sigin : 아이디오류 / 비밀번호 오류 분기
+*/
+
 'use strict';
 
 const chai = require('chai');
@@ -177,6 +182,30 @@ describe('Bare Minimum Requirements', () => {
           done();
         });
     });
+
+
+    //////
+    it('should respond conflict with short password', done => {
+      chai
+        .request(app)
+        .post('/user/signup')
+        .send({
+          email: 'duhyun.lee@codestates.com',
+          username: 'duhyundev',
+          password: '1234'
+        })
+        .end((err, res) => {
+          if (err) {
+            done(err);
+            return;
+          }
+          expect(res).to.have.status(409);
+          expect(res.text).to.equal('Password should be longer than 8 characters');
+          done();
+        });
+    });
+    //////
+    
   });
 
   describe('POST /user/signin', () => {
@@ -194,7 +223,7 @@ describe('Bare Minimum Requirements', () => {
         });
     });
 
-    it('should respond NOT FOUND with unvalid user', done => {
+    it('should respond NOT FOUND with unvalid email', done => {
       chai
         .request(app)
         .post('/user/signin')
@@ -204,10 +233,28 @@ describe('Bare Minimum Requirements', () => {
         })
         .end((err, res) => {
           expect(res).to.have.status(404);
-          expect(res.text).to.equal('unvalid user');
+          expect(res.text).to.equal('unvalid email');
           done();
         });
     });
+
+    it('should respond NOT FOUND with unvalid password', done => {
+      chai
+        .request(app)
+        .post('/user/signin')
+        .send({
+          email: 'duhyun.kim@codestates.com',
+          password: 'swiss'
+        })
+        .end((err, res) => {
+          expect(res).to.have.status(404);
+          expect(res.text).to.equal('unvalid password');
+          done();
+        });
+    });
+
+
+
   });
 
   describe('GET /user/info', () => {

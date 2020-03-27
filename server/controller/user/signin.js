@@ -8,6 +8,34 @@ module.exports = {
     await users
       .findAll({
         where: {
+          email: userData.email
+        }
+      })
+      .then(data => {
+        if (!data[0]) {
+          res.status(404).send('unvalid email');
+        } else {
+          if (data[0].password !== userData.password) {
+            res.status(404).send('unvalid password');
+          } else {
+            let idOnly = {};
+            idOnly.id = data[0].id;
+            req.session.username = idOnly.id;
+            req.session.save(function() {
+              res.status(200).send(idOnly);
+            });
+          }
+        }
+      });
+  }
+};
+
+
+
+/* 기존코드
+    await users
+      .findAll({
+        where: {
           email: userData.email,
           password: userData.password
         }
@@ -21,5 +49,5 @@ module.exports = {
         });
       })
       .catch(err => res.status(404).send('unvalid user'));
-  }
-};
+
+*/
